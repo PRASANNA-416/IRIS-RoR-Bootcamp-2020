@@ -37,5 +37,25 @@
 # We will raise an `ArgumentError` exception to let the caller know that
 # their function arguments were incorrect.
 def fizz_buzz(n:, x: 3, y: 5)
+  if n<=0 or x==0 or y==0 then 
   raise NotImplementedError # TODO
+  end
+  numbers = []
+  i = 1
+  while i<=n
+    if i%x == 0
+      numbers.push("fizz")
+    elsif i%y == 0
+      numbers.push("buzz")
+    elsif i%x ==0 && i%y ==0
+      numbers.push("fizzbuzz")
+    else
+      numbers.push(i)
+    end
+    i +=1
+  end
 end
+fizz_buzz 15
+puts " the required array of strings #{numbers}"
+
+
